@@ -18,9 +18,9 @@ class Solution {
         long long l=*max_element(arr.begin(),arr.end());
         long long r=accumulate(arr.begin(),arr.end(),0LL);
         
-        while(l<r){
+        while(l<=r){
             long long mid=l+(r-l)/2;
-            if(check(mid,arr,k))r=mid;
+            if(check(mid,arr,k))r=mid-1;
             else l=mid+1;
         }
         return (int)l;
