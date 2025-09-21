@@ -32,8 +32,8 @@ class Solution {
            NSE(a,nse);
            for(int k=0;k<m;k++){
              if(a[k]!=0)ans=max(ans,(nse[k]-pse[k]-1)*a[k]);
-             nse[k]=0;
-             pse[k]=0;
+            //  nse[k]=0;
+            //  pse[k]=0;
            }
        }
        return ans;
