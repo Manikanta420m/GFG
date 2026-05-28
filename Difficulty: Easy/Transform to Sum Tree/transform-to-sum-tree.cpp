@@ -12,21 +12,21 @@ public:
     }
 };
 */
+
 class Solution {
-  public:
-    void toSumTree(Node *root) {
-        if(root == nullptr) return;
-        int x = 0;
-        if(root->left != nullptr){
-            x += root->left->data;
-            toSumTree(root->left);
-            x += root->left->data;
+private:
+    int solve(Node* node){
+        if(node == NULL){
+            return 0;
         }
-        if(root->right != nullptr){
-            x += root->right->data;
-            toSumTree(root->right);
-            x += root->right->data;
-        }
-        root->data = x;
+        int a = solve(node->left);
+        int b = solve(node->right);
+        int c = node->data;
+        node->data = a + b;
+        return a+b+c;
+    }
+public:
+    void toSumTree(Node *node) {
+       int d = solve(node);
     }
 };
